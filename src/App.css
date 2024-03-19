@@ -39,6 +39,15 @@
   display: flex;
 }
 
+.Select {
+  width: 200px;
+  height: 30px;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 4 8px;
+}
+
 .Card {
   width: 200px;
   height: fit-content;
