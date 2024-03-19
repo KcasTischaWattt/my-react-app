@@ -1,13 +1,15 @@
+import React,{ useState } from 'react';
+
 import './App.css';
 
 import { Input } from './input';
 import { Card } from './Card';
 
 function App() {
-  const citiesList = ['Moscow', 'New York', 'London'];
+  const [citiesList, setCitiesList] = useState(['London', 'Paris', 'New York']);
   return (
     <div className="Main">
-      <Input />
+      <Input setCitiesList={setCitiesList}/>
       <div className='CardList'>
         {
           citiesList.map((city) => (

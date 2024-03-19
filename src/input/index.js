@@ -2,27 +2,22 @@ import React,{ useState } from 'react';
 
 import '../App.css';
 
-export const InputTag = () => {
+export const Input = ({setCitiesList}) => { 
   const [inputValue, setInputValue] = useState('');
+
+  const handleOnClick = () => {
+    setCitiesList((prevCitiesList) => [...prevCitiesList, inputValue]);
+    setInputValue('');
+  };
+
   const handleOnChange = (e) => {
     setInputValue(e.target.value);
   }
-  return (
-      <input className="Input" onChange={handleOnChange} value = {inputValue}/>
-  );
-};
 
-export const Input = () => {
   return (
     <div className="InputWrap">
-        <InputTag />
-        <Button />
+        <input className="Input" onChange={handleOnChange} value = {inputValue}/>
+        <button className="Button" onClick={handleOnClick}>+</button>
     </div>
-  );
-}
-
-const Button = () => {
-  return (
-    <button className="Button">+</button>
   );
 }
