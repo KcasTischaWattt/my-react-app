@@ -6,7 +6,7 @@ import { Input } from './input';
 import { CardList } from './CardList';
 
 function App() {
-  const [citiesList, setCitiesList] = useState(['London', 'Paris', 'New York']);
+  const [citiesList, setCitiesList] = useState([]);
   return (
     <div className="Main">
       <Input setCitiesList={setCitiesList}/>

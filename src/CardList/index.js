@@ -4,9 +4,6 @@ import '../App.css';
 import { Card } from '../Card';
 
 export const CardList = ({citiesList}) => {
-  useEffect(() => {
-    console.log('CardList rendered');
-  }, [citiesList]);
   return (
     <div className='CardList'>
       {
