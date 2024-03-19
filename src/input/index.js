@@ -1,10 +1,12 @@
+import React from 'react';
+
 import '../App.css';
 
 export const Input = () => {
   return (
-    <div className="Main">
+    <div className="InputWrap">
+        <input className="Input" />
+        <button className="Button">+</button>
     </div>
   );
 }
-
-export default App;
