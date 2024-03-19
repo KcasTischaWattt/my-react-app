@@ -2,12 +2,13 @@ import React,{ useState,useRef } from 'react';
 
 import '../App.css';
 
-export const Input = ({setCitiesList}) => { 
+export const Input = ({ dispatch }) => { 
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef(null);
 
   const handleOnClick = () => {
-    setCitiesList((prevCitiesList) => [...prevCitiesList, inputValue]);
+    if (!inputValue || !inputValue.length) return;
+    dispatch({ type: 'ADD_CITY', payload: inputValue });
     setInputValue('');
     inputRef.current.focus();
   };
@@ -15,7 +16,7 @@ export const Input = ({setCitiesList}) => {
   const handleOnChange = (e) => {
     setInputValue(e.target.value);
   }
-  
+
   return (
     <div className="InputWrap">
         <input className="Input" onChange={handleOnChange} value = {inputValue} ref={inputRef}/>
