@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="Main">
       <Input dispatch={dispatch}/>
-      <CardList citiesList={citiesList}/>
+      <CardList citiesList={citiesList} dispatch={dispatch}/>
     </div>
   );
 }

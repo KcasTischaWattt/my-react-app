@@ -7,6 +7,10 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_CITY':
             return { citiesList: [...state.citiesList, action.payload] };
+        case 'DELETE_CITY': 
+            const oldCitiesList = state.citiesList;
+            const newCitiesList = oldCitiesList.filter((city) => city !== action.payload);
+            return {...state, citiesList: newCitiesList};
         default:
             return state;
     }

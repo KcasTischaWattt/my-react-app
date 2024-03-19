@@ -55,6 +55,19 @@
   margin-left: 0;
 }
 
+.ActionButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.DeleteCity {
+  cursor: pointer;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
 .MainInfo {
   display: flex;
   flex-direction: column;
