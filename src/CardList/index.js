@@ -7,12 +7,13 @@ import { GlobalContext } from '../App';
 export const CardList = () => {
   const [orderBy, setOrderBy] = useState('desc');
   const { state } = useContext(GlobalContext);
-  let sortedCitiesList = [...state.citiesList];
-  if (orderBy === 'asc') {
-    sortedCitiesList = state.citiesList.sort();
-  } else {
-    sortedCitiesList = state.citiesList.sort().reverse();
-  }
+  const sortedCitiesList = [...state.citiesList].sort((a, b) => {
+    if (orderBy === 'asc') {
+      return a.localeCompare(b);
+    } else {
+      return b.localeCompare(a);
+    }
+  });
 
   const handleOnChange = (e) => {
     setOrderBy(e.target.value);
@@ -25,12 +26,10 @@ export const CardList = () => {
         <option value="asc">By name asc</option>
       </select>
       <div className='CardList'>
-        {
-          state.citiesList.map((city) => (
-            <Card key={city} city={city}/>
-          ))
-        }
+        {sortedCitiesList.map((city) => (
+          <Card key={city} city={city} />
+        ))}
       </div>
     </>
   );
-}
+};
