@@ -15,7 +15,7 @@ export const Input = ({setCitiesList}) => {
   const handleOnChange = (e) => {
     setInputValue(e.target.value);
   }
-
+  
   return (
     <div className="InputWrap">
         <input className="Input" onChange={handleOnChange} value = {inputValue} ref={inputRef}/>
