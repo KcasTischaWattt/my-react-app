@@ -4,10 +4,13 @@
   padding: 24px;
 }
 
+/*Input*/
+
 .InputWrap {
   display: flex;
   height: 70px;
   border-radius: 12px;
+  margin-bottom: 24px;
   box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -28,4 +31,60 @@
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   cursor: pointer;
+}
+
+/*Card*/
+
+.CardList {
+  display: flex;
+}
+
+.Card {
+  width: 200px;
+  height: fit-content;
+  padding: 12px;
+  margin-left: 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 3px 3px 12px 1px rgba(0, 0, 0, 0.25);
+  background-color: #3A8AC0;
+  color: #fff;
+}
+
+.Card:first-child {
+  margin-left: 0;
+}
+
+.MainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.Description {
+  margin: 4px;
+  font-size: 16px;
+}
+
+.Temperature {
+  margin-top: 12px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.Temperature::after {
+  content: "°C";
+}
+
+.Information {
+  margin-top: 12px;
+}
+
+.Information > div {
+  margin: 4px;
 }
